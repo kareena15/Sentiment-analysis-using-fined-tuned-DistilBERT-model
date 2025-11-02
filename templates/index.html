@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Sentiment Analysis</h2>
+    <form method="POST" action="/predict">
+        <textarea class="input-box" name="text_input" rows="4" placeholder="Enter text for sentiment analysis..."></textarea><br>
+        <button type="submit" class="submit-btn">Analyze Sentiment</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            <h3>Prediction:</h3>
+            <p class="prediction-text">{{ prediction }}</p>
+            <p>Text Input: {{ user_input }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            text-align: center;
+            width: 50%;
+            margin: auto;
+        }
+        .input-box {
+            padding: 10px;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sentiment Analysis</h2>
+    <form method="POST" action="/predict">
+        <textarea class="input-box" name="text_input" rows="4" placeholder="Enter text for sentiment analysis..."></textarea><br>
+        <button type="submit" class="submit-btn">Analyze Sentiment</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            <h3>Prediction: {{ prediction }}</h3>
+            <p>Text Input: {{ user_input }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html> -->

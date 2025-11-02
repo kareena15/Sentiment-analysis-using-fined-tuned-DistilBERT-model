@@ -1,0 +1,133 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Turquoise gradient background */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center content */
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    background-color: #e0f7fa;  /* Soft turquoise that blends with the outer greenish color */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Animation for content sliding in */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading styles with black text color */
+h2 {
+    font-size: 36px;
+    color: #333;  /* Keep text black */
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Textarea styles */
+.input-box {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    resize: vertical;
+    min-height: 120px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+.input-box:focus {
+    border-color: #00f2fe; /* Highlight border on focus with turquoise */
+    outline: none;
+}
+
+/* Button styles */
+.submit-btn {
+    padding: 12px 24px;
+    background-color: #00f2fe;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #4facfe; /* Hover effect */
+    transform: scale(1.05);
+}
+
+/* Result box styles */
+.result {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #333;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.result h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styles for the prediction text */
+.prediction-text {
+    font-weight: 700;
+    color: #00f2fe; /* Turquoise color for prediction text */
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px;
+    }
+
+    .input-box {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+    }
+
+    .result {
+        font-size: 16px;
+    }
+}
